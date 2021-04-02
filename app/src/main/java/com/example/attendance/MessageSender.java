@@ -30,7 +30,7 @@ public class MessageSender extends AsyncTask<String,Void,Void> {
         String message = voids[0];
         try {
             System.out.println(ip);
-            s = new Socket(ip, 6868);
+            s = new Socket(ip, 1999);
             System.out.println("Connection success");
 
             BufferedReader bfs = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -51,7 +51,7 @@ public class MessageSender extends AsyncTask<String,Void,Void> {
                 s.close();
             }
             else {
-                System.out.println("error");
+                System.out.println("frr error");
             }
 
 

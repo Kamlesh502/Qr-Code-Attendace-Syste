@@ -4,25 +4,29 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
     ImageButton scnbtn1;
     public static String ip;
-    public static String enroll = "170303105359";
+    public static String enroll = "170303105021";
     public static int randomno;
     TelephonyManager tm;
     public static String imei;
     Button sbtbtn;
+    private FingerprintManager fingerprintManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         scnbtn1 = (ImageButton) findViewById(R.id.scnbtn);
         scnbtn1.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("HardwareIds")
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
@@ -53,7 +58,6 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     public void sen_data(View v)
-
     {
 
 
